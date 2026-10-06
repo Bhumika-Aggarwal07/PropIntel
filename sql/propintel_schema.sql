@@ -1,0 +1,35 @@
+CREATE DATABASE IF NOT EXISTS propintel;
+USE propintel;
+
+CREATE TABLE IF NOT EXISTS properties (
+    property_id INT AUTO_INCREMENT PRIMARY KEY,
+    source_listing_id VARCHAR(50) NOT NULL,
+    city VARCHAR(80) NULL,
+    locality VARCHAR(120) NULL,
+    property_type VARCHAR(50) NULL,
+    bhk INT NULL,
+    bathrooms DECIMAL(4, 1) NULL,
+    balconies DECIMAL(4, 1) NULL,
+    furnishing VARCHAR(50) NULL,
+    super_built_up_area_sqft DECIMAL(12, 2) NOT NULL,
+    built_up_area_sqft DECIMAL(12, 2) NOT NULL,
+    carpet_area_sqft DECIMAL(12, 2) NOT NULL,
+    floor INT NOT NULL,
+    total_floors INT NOT NULL,
+    parking VARCHAR(50) NULL,
+    building_type VARCHAR(60) NULL,
+    year_built INT NULL,
+    age_years INT NULL,
+    facing VARCHAR(40) NULL,
+    amenities_count INT NOT NULL,
+    is_rera_registered VARCHAR(10) NULL,
+    rera_id VARCHAR(80) NULL,
+    latitude DECIMAL(10, 7) NULL,
+    longitude DECIMAL(10, 7) NULL,
+    price_inr DECIMAL(15, 2) NOT NULL,
+    INDEX idx_city (city),
+    INDEX idx_locality (locality),
+    INDEX idx_property_type (property_type),
+    INDEX idx_price_inr (price_inr),
+    INDEX idx_bhk (bhk)
+);
